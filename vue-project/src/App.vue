@@ -1,47 +1,38 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script setup lang="ts">
+import { ref } from 'vue'
+import { Product, COLOR } from '@/types'
+
+import ProductList from './components/ui/ProductList/ProductList.vue';
+
+const products = ref<Product[]>([
+  {
+    id: 1,
+    name: 'Basic Tee',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: '$35',
+    color: COLOR.BLACK,
+  },
+  {
+    id: 2,
+    name: 'Basic Tee',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: '$25',
+    color: COLOR.WHITE,
+  },
+])
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <h1>Test</h1>
+  <ProductList :productList="products" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
