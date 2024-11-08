@@ -28,9 +28,11 @@ const products = ref<Product[]>([
 </script>
 
 <template>
-  <h1>Test</h1>
-  <ProductList :productList="products" />
+  <div class="wg-white px-12 py-12 mx-auto w-full"> 
 
+    <h1 class="3xl text-blue-500">E-Commerce app</h1>
+    <ProductList :productList="products" />
+  </div>
 </template>
 
 <style scoped>
